@@ -1,9 +1,11 @@
+extern crate rand;
 use std::io;
 use rand::Rng;
 
 fn main() {
     println!("Bienvenue dans le jeu du Nombre Mystère !");
-    let secret = rand::thread_rng().gen_range(1..=100);
+    let mut rng = rand::thread_rng(); // Utilisation correcte de thread_rng()
+    let secret = rng.gen_range(1..=100); // Syntaxe confirmée fonctionnelle
 
     loop {
         println!("Entrez votre supposition :");
